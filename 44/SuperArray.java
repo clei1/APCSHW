@@ -5,8 +5,6 @@ HW#44 -- On This Homework, the Driver Sits on the Bed
 2016-12-12
 */
 
-
-
 /**************************************************
   class SuperArray version 4.0
   Wrapper class for array. Facilitates 
