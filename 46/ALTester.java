@@ -1,10 +1,3 @@
-/*
-Connie Lei
-APCS1 pd1
-HW#45 - Al<B> Sorted!
-2016-12-13
-*/
-
 import java.util.ArrayList;
 
 public class ALTester{
