@@ -84,7 +84,7 @@ public class Rational {
 
     public void reduce(){
 	den = den / gcd();
-	nom = nom / gcd();
+	num = num / gcd();
     }
 
     public static int gcd(int denom, int numer){
