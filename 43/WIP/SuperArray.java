@@ -3,7 +3,7 @@ Team B(a)Con
 Brian Kwong & Connie Lei
 APCS1 pd1
 HW#43 -- Array of Titanium!
-2016-12-08
+2016-12-09
 */ 
 
 /*==================================================
