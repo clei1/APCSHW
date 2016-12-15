@@ -1,8 +1,8 @@
 /*
 Connie Lei
 APCS1 pd1
-HW#40 -- Rational Equality
-2016-12-06
+HW#41 -- Array of Steel
+2016-12-07
 */
 
 /*==================================================
