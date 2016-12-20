@@ -61,7 +61,7 @@ public class OrderedArrayList
     // uses a linear search to find appropriate index
     public void addLinear( Comparable newVal ) 
     { 
-    for( int p = 0; p < _data.size(); p++ ) {
+	for( int p = 0; p < _data.size(); p++ ) {
 	    if ( newVal.compareTo( _data.get(p) ) < 0 ) { 
 		//newVal < oal[p]
 		_data.add( p, newVal );
@@ -73,7 +73,28 @@ public class OrderedArrayList
 
     public void addBin( Comparable newVal)
     {
-
+	System.out.println(_data.toString());
+	System.out.println(newVal);
+	if(_data.size() == 0){
+	    _data.add(newVal);
+	    return;
+	}
+        int upper = _data.size() -1;
+	int lower = 0;
+	while(upper != lower && upper > lower){
+	    if(newVal.compareTo(_data.get((upper + lower)/2)) >= 0){
+		lower = (upper + lower) /2 + 1;
+	    }
+	    else{
+		upper = (upper + lower) /2 - 1;
+	    }
+	}
+	if(newVal.compareTo(_data.get(lower)) > 0){ //sometimes you end up getting the position you should insert it at or the one after, so you need to have a second check
+	    _data.add(lower + 1, newVal);
+	}
+	else{
+	    _data.add(lower, newVal);
+	}
     }
 
     // main method solely for testing purposes
@@ -83,7 +104,7 @@ public class OrderedArrayList
 
 	// testing linear search
 	for( int i = 0; i < 15; i++ )
-	    Franz.addLinear( (int)( 50 * Math.random() ) );
+	    Franz.addBin( (int)( 50 * Math.random() ) );
 	System.out.println( Franz );
 
 	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
