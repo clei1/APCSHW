@@ -44,12 +44,12 @@ public class BubbleSort
     // postcondition: data's elements sorted in ascending order
     public static void bubbleSortV( ArrayList<Comparable> data ) 
     {
-	for(int x = data.size() - 1; x >= 0; x--){
-	    for(int x = 0; x < data.size(); x++){
-		if(data.get(x).toCompare(data.get(x+1)) > 0){
+	for(int y = data.size() - 1; y >= 0; y--){
+	    for(int x = 0; x < data.size() - 1; x++){
+		if(data.get(x).compareTo(data.get(x+1)) > 0){
 		    Comparable temp = data.get(x);
-		    data.set(int, data.get(x+1));
-		    data.set(int + 1, temp);
+		    data.set(x, data.get(x+1));
+		    data.set(x + 1, temp);
 		}
 	    }
 	}
@@ -61,9 +61,9 @@ public class BubbleSort
     //                Returns sorted copy of input ArrayList.
     public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input ) 
     {
-        ArrayList<Comparable> temp;
+        ArrayList<Comparable> temp = new ArrayList<Comparable>();
 	for(int x = 0; x < input.size(); x++){
-	    temp.add(input.get());
+	    temp.add(input.get(x));
 	}
 	bubbleSortV(temp);
 	return temp;
@@ -72,7 +72,7 @@ public class BubbleSort
 
 
     public static void main(String [] args)
-    {
+    {/*
 	  ArrayList glen = new ArrayList<Integer>();
 	  glen.add(7);
 	  glen.add(1);
@@ -87,8 +87,7 @@ public class BubbleSort
 	  System.out.println( "ArrayList coco before sorting:\n" + coco );
 	  bubbleSortV(coco);
 	  System.out.println( "ArrayList coco after sorting:\n" + coco );
-
-	/*==========for AL-returning methods==========
+     */
 	  ArrayList glen = new ArrayList<Integer>();
 	  glen.add(7);
 	  glen.add(1);
@@ -107,8 +106,6 @@ public class BubbleSort
 	  System.out.println( "sorted version of ArrayList coco:\n" 
 	  + cocoSorted );
 	  System.out.println( "ArrayList coco after sorting:\n" + coco );
-	  System.out.println( coco );
-	  ============================================*/
 
     }//end main
 
