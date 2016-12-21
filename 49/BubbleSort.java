@@ -44,12 +44,12 @@ public class BubbleSort
     // postcondition: data's elements sorted in ascending order
     public static void bubbleSortV( ArrayList<Comparable> data ) 
     {
-	for(int y = data.size() - 1; y >= 0; y--){
-	    for(int x = 0; x < data.size() - 1; x++){
-		if(data.get(x).compareTo(data.get(x+1)) > 0){
-		    Comparable temp = data.get(x);
-		    data.set(x, data.get(x+1));
-		    data.set(x + 1, temp);
+	for(int y = data.size() - 1; y >= 0; y--){ //runs it the # size -1 rotations 
+	    for(int x = 0; x < data.size() - 1; x++){ //x will the the second to last index maximum
+		if(data.get(x).compareTo(data.get(x+1)) > 0){ //if the current number at index x is greater than the index x+1, then swap them
+		    Comparable temp = data.get(x); //stores a local 
+		    data.set(x, data.get(x+1)); //sets the index at x to be the number at index x+1
+		    data.set(x + 1, temp); //sets the index x+1 to be the number at previously x
 		}
 	    }
 	}
@@ -62,11 +62,12 @@ public class BubbleSort
     public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input ) 
     {
         ArrayList<Comparable> temp = new ArrayList<Comparable>();
-	for(int x = 0; x < input.size(); x++){
-	    temp.add(input.get(x));
+	for(int x = 0; x < input.size(); x++){ //performs a deep copy, else it will create a link to the old ArrayList
+	    temp.add(input.get(x)); //adds the values, no need for the index because it just adds it to the end, even if you add it sporadically, you would still sort it
+	    //you could use the addBinary or addLinear we wrote yesterday
 	}
-	bubbleSortV(temp);
-	return temp;
+	bubbleSortV(temp);//sorts temp, there is no return type
+	return temp; //returns the sorted ArrayList
 	
     }//end bubbleSort
 
