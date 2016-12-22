@@ -46,7 +46,12 @@ public class InsertionSort
     // postcondition: data's elements sorted in ascending order
     public static void insertionSortV( ArrayList<Comparable> data ) 
     {
-	/* YOUR IMPLEMENTATION HERE */	
+	for(int x = 1; x < data.size(); x++){
+	    int pos = x;
+	    while(data.get(pos).compareTo(data.get(pos-1)) > 0){
+		data.set(pos, data.set(pos - 1, data.get(pos)));
+	    }		   
+	}
     }//end insertionSortV
 
 
