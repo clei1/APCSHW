@@ -50,6 +50,7 @@ public class InsertionSort
 	    int pos = x;
 	    while(data.get(pos).compareTo(data.get(pos-1)) > 0){
 		data.set(pos, data.set(pos - 1, data.get(pos)));
+		pos += 1;
 	    }		   
 	}
     }//end insertionSortV
