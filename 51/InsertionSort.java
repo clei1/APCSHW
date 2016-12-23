@@ -48,9 +48,9 @@ public class InsertionSort
     {
 	for(int x = 1; x < data.size(); x++){
 	    int pos = x;
-	    while(data.get(pos).compareTo(data.get(pos-1)) > 0){
+	    while(pos > 0 && data.get(pos).compareTo(data.get(pos-1)) < 0){
 		data.set(pos, data.set(pos - 1, data.get(pos)));
-		pos += 1;
+		pos -= 1;
 	    }		   
 	}
     }//end insertionSortV
@@ -60,15 +60,19 @@ public class InsertionSort
     // postcondition: order of input ArrayList's elements unchanged
     //                Returns sorted copy of input ArrayList.
     public static ArrayList<Comparable> insertionSort( ArrayList<Comparable> input ) 
-{
-	/* YOUR IMPLEMENTATION HERE */	
+    {
+	ArrayList<Comparable> temp = new ArrayList<Comparable>();
+	for(int x = 0; x < input.size(); x++){
+	    temp.add(input.get(x));
+	}
+	insertionSortV(temp);
+	return temp;
     }//end insertionSort
 
 
     public static void main( String [] args ) 
 {
 
-	/*===============for VOID methods=============
 	System.out.println("\n*** Testing sort-in-place (void) version... *** ");
 	ArrayList glen = new ArrayList<Integer>();
 	glen.add(7);
@@ -84,7 +88,6 @@ public class InsertionSort
 	System.out.println( "\nArrayList coco before sorting:\n" + coco );
 	insertionSortV(coco);
 	System.out.println( "\nArrayList coco after sorting:\n" + coco );
-	  ============================================*/
 
 	/*==========for AL-returning methods==========
 	System.out.println( "*** Testing non-void version... *** " );
