@@ -64,7 +64,7 @@ public class StatPrinter
     //  _frequency would be [0,0,3,2,0,1]
     public StatPrinter( ArrayList <Integer> data ) 
     { 
-	_frequency = new ArrayList<Integer>[];
+	_frequency = new ArrayList<Integer>();
 	for(int i: data){
 	    while(_frequency.size()-1 < i){
 		_frequency.add(0);
@@ -106,7 +106,7 @@ public class StatPrinter
     //postcond: returns list of modes in _frequency
     public ArrayList <Integer> getLocalModes() 
     {
-	ArrayList<Integer> mode = new ArrayList<Integer>[];
+	ArrayList<Integer> mode = new ArrayList<Integer>();
 	for(int x = _frequency.size() - 2; x > 0; x --){
 	    if(isLocalMode(x)){
 		mode.add(x);
@@ -126,7 +126,7 @@ public class StatPrinter
 		maxFreq = i;
 	    }
 	}
-	int ratio = (double) (longestBar) / maxFreq ;
+	int ratio = longestBar / maxFreq ;
 	int counter = 0;
 	for(int i:_frequency){
 	    System.out.println(counter + " : ");
