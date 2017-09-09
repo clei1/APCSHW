@@ -1,0 +1,8 @@
+[submodule "apcs1-rpg"]
+	path = apcs1-rpg
+	url = https://github.com/clei1/apcs1-rpg
+	branch = master
+[submodule "apcs1-final-tak"]
+	path = apcs1-final-tak
+	url = https://github.com/clei1/apcs1-final-tak
+	branch = master
